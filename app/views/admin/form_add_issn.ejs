@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Qualis CAPES - Cadastrar</title>
+    <!-- bootstrap - link cdn -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../../public/img/favicon.ico" />
+    <link rel="stylesheet" href="../../public/css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<!-- Brand/logo -->
+		<a class="navbar-brand" href="#"><img class="img-fluid" src="img/logocapeswebqualis.png" /></a>
+		
+		<!-- Links -->
+		<ul class="navbar-nav">
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Link 1</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Link 2</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Link 3</a>
+		  </li>
+		</ul>
+	  </nav>
+
+
+	
+
+
+	<div class="container-fluid">
+
+        <% if(validacao.length > 0) { %>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-danger">
+                    <strong>Atenção!</strong>
+                    <ul>
+                        <% for(var i = 0; i < validacao.length; i++) { %>
+                        <li><%= validacao[i].msg %></li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <% } %>
+
+        <div class="row">
+            <div class="col-md-12">
+                <form action="/qualis/salvar" method="post">
+                    <div class="form-group">
+                        <label for="issn">ISSN:</label>
+                        <input type="text" class="form-control" id="issn" name="issn">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="titulo">Título:</label>
+                        <input type="text" class="form-control" id="titulo" name="titulo">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="area_avaliacao">Área de Avalicação:</label>
+                        <input type="text" class="form-control" id="area_avaliacao" name="area_avaliacao">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="estrato">Estrato:</label>
+                        <input type="text" class="form-control" id="estrato" name="estrato">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Qualis CAPES</title>
+	<!-- Bootstrap 4 CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link href="css/style.css" rel="stylesheet">
+	<link rel="shortcut icon" href="img/favicon.ico" />
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<!-- Brand/logo -->
+		<a class="navbar-brand" href="#"><img class="img-fluid" src="img/logocapeswebqualis.png" /></a>
+		
+		<!-- Links -->
+		<ul class="navbar-nav">
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Link 1</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Link 2</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Link 3</a>
+		  </li>
+		</ul>
+	  </nav>
+
+
+	
+
+
+	<div class="container-fluid">
+
+
+
+		<div class="row">
+			<div class="col-md-12">
+				<!-- issn 0-->
+				<div class="noticia_wrapper">
+					<span class="noticia_autor"><%= qualis[0].issn %></span>
+					<a href="issn?id_qualis=<%= qualis[0].id_qualis %>"
+						class="noticia_titulo"><%= qualis[0].titulo %></a>
+					<span class="noticia_data"><%= qualis[0].area_avaliacao %></span>
+
+					<span class="noticia_resumo">
+						<%= qualis[0].estrato %>
+					</span>
+				</div>
+			</div>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-md-12">
+
+				<div class="noticia_wrapper">
+					<span class="issn"><%= qualis[1].issn %></span>
+					<a href="issn?id_qualis=<%= qualis[1].id_qualis %>" class="issn_titulo"><%= qualis[1].titulo %></a>
+					<span class="noticia_data"><%= qualis[1].area_avaliacao %></span>
+					<br />
+					<p class="noticia_resumo">
+						<%= qualis[1].estrato %>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<% for(var i = 2; i < qualis.length; i++) { %>
+			<div class="col-md-4">
+				<!-- noticia 2 -->
+				<div class="noticia_wrapper">
+					<span class="issn"><%= qualis[i].issn %></span>
+					<a href="issn?id_qualis=<%= qualis[i].id_qualis %>" class="issn_titulo"><%= qualis[i].titulo %></a>
+					<span class="noticia_data"><%= qualis[i].area_avaliacao %></span>
+					<br />
+					<p class="noticia_resumo">
+						<%= qualis[i].estrato %>
+					</p>
+				</div>
+			</div>
+
+			<% } %>
+		</div>
+
+		<div class="row ver_mais">
+			<button type="button" class="btn btn-default"><a href="qualis">Ver todas as Qualis</a></button>
+		</div>
+
+	</div>
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+
+</body>
+
+</html>

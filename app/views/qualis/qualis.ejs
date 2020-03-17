@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+
+		<title>Qualis CAPES Lista</title>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	
+		<!-- incluindo css -->
+		<link href="css/style.css" rel="stylesheet">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="img/favicon.ico" />
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<!-- Brand/logo -->
+		<a class="navbar-brand" href="#"><img class="img-fluid" src="img/logocapeswebqualis.png" /></a>
+		
+		<!-- Links -->
+		<ul class="navbar-nav">
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Link 2</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Link 2</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Link 3</a>
+		  </li>
+		</ul>
+	  </nav>
+
+
+	
+
+
+	<div class="container-fluid">
+
+
+		<% if(qualis.length > 0) { %>
+		<% for(var i = 0; i < qualis.length; i++) { %>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="noticia_wrapper">
+
+					<span class="noticia_autor"><%= qualis[0].issn %></span>
+
+					<a href="issn?id_qualis=<%= qualis[0].id_qualis %>"
+						class="noticia_titulo"><%= qualis[0].titulo %></a>
+
+					<span class="noticia_data"><%= qualis[0].area_avaliacao %></span>
+
+					<span class="noticia_resumo"><%= qualis[0].estrato %></span>
+				</div>
+			</div>
+		</div>
+		<% } %>
+		<% } %>
+	</div>
+
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+
+</body>
+
+</html>
