@@ -50,14 +50,16 @@
 			<div class="col-md-12">
 				<div class="noticia_wrapper">
 
-					<span class="noticia_autor"><%= qualis[0].issn %></span>
+					<span class="noticia_autor"><%= qualis[i].issn %></span>
 
-					<a href="issn?id_qualis=<%= qualis[0].id_qualis %>"
-						class="noticia_titulo"><%= qualis[0].titulo %></a>
+					<a href="id_qualis?id_qualis=<%= qualis[i].id_qualis %>"
+						class="noticia_titulo"><%= qualis[i].titulo %></a>
 
-					<span class="noticia_data"><%= qualis[0].area_avaliacao %></span>
+						
 
-					<span class="noticia_resumo"><%= qualis[0].estrato %></span>
+					<span class="noticia_data"><%= qualis[i].area_avaliacao %></span>
+
+					<span class="noticia_resumo"><%= qualis[i].estrato %></span>
 				</div>
 			</div>
 		</div>

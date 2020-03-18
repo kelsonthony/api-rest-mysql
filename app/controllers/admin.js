@@ -1,11 +1,11 @@
 module.exports.formulario_inclusao_issn = function(application, req, res){
-    res.render("admin/form_add_issn", {validacao : {}, issn : {}});
+    res.render("admin/form_add_issn", {validacao : {}, issnItem : {}});
 }
 
 module.exports.qualis_salvar = function(application, req, res){
         //res.render("admin/form_add_issn")
         //res.send('Chegou na página');
-        var issn = req.body;
+        var issnItem = req.body;
         //res.send(noticias);
         //console.log(noticia)
         //campos obrigatórios no formulário
@@ -21,7 +21,7 @@ module.exports.qualis_salvar = function(application, req, res){
         var erros = req.validationErrors();
         //console.log(erros)
         if(erros){
-            res.render("admin/form_add_issn", {validacao: erros, issn: issn});
+            res.render("admin/form_add_issn", {validacao: erros, issnItem: issnItem});
             return;
         }
         
@@ -30,7 +30,7 @@ module.exports.qualis_salvar = function(application, req, res){
         //recuperar o model
         var qualisModel = new application.app.models.QualisDAO(connection);
         //salvar a issn
-        qualisModel.saveQualis(issn, function(error, result){
+        qualisModel.saveQualis(issnItem, function(error, result){
             res.redirect('/qualis');
         });
 }

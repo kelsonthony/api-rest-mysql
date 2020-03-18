@@ -1,66 +1,81 @@
 <!DOCTYPE HTML>
 <html lang="pt-br">
-	<head>
-		<meta charset="UTF-8">
 
-		<title>Qualis CAPES Item</title>
-		
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	
-		<!-- incluindo css -->
-		<link href="css/style.css" rel="stylesheet">
+<head>
+	<meta charset="UTF-8">
 
-		<!-- favicon -->
-		<link rel="shortcut icon" href="img/favicon.ico" />
-		<link rel="stylesheet" href="css/style.css">
-	</head>
+	<title>Qualis CAPES ISSN</title>
 
-	<body>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-			<!-- Brand/logo -->
-			<a class="navbar-brand" href="#"><img class="img-fluid" src="img/logocapeswebqualis.png" /></a>
-			
-			<!-- Links -->
-			<ul class="navbar-nav">
-			  <li class="nav-item">
+	<!-- incluindo css -->
+	<link href="css/style.css" rel="stylesheet">
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="img/favicon.ico" />
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<!-- Brand/logo -->
+		<a class="navbar-brand" href="#"><img class="img-fluid" src="img/logocapeswebqualis.png" /></a>
+
+		<!-- Links -->
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link" href="/">Início</a>
+			</li>
+			<li class="nav-item">
 				<a class="nav-link" href="#">Link 2</a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="#">Link 2</a>
-			  </li>
-			  <li class="nav-item">
+			</li>
+			<li class="nav-item">
 				<a class="nav-link" href="#">Link 3</a>
-			  </li>
-			</ul>
-		  </nav>
-	
-	
-		
-	
-	
-		<div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div>
+			</li>
+		</ul>
+	</nav>
 
-						<a href="issn/?id_qualis=<%= issn[0].id_qualis %>" class="noticia_titulo"><%= issn[0].titulo %></a>
+
+
+
+	<div class="container-fluid">
+		
+		<div class="row">
+
+			<div class="col-md-12">
+				<!-- issn 0-->
+				<h3>Informações Qualis do Título: <%= issn[0].titulo %></h3>
+				<br/>
+				<div class="container-fluid">
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col">ISSN</th>
+								<th scope="col">Título</th>
+								<th scope="col">Área de Avaliação</th>
+								<th scope="col">Estrato</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row"><%= issn[0].issn %></th>
+								<td><%= issn[0].titulo %></td>
+								<td><%= issn[0].area_avaliacao %></td>
+								<td><%= issn[0].estrato %></td>
+							</tr>
+							
 						
-						<span><%= issn[0].issn %></span>
-						
-						<span><%= issn[0].titulo %></span>
-						
-                        <span><%= issn[0].area_avaliacao %></span>
-                        
-                        <span><%= issn[0].estrato %></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-	
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 		crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
@@ -69,6 +84,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
-	
-	</body>
+
+</body>
+
 </html>

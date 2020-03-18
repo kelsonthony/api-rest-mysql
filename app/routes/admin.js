@@ -7,4 +7,6 @@ module.exports = function(application){
     application.post('/qualis/salvar', function(req, res) {
         application.app.controllers.admin.qualis_salvar(application, req, res);
     });
+
+    
 };

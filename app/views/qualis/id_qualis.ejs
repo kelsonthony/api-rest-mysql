@@ -3,16 +3,22 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Qualis CAPES Início</title>
-	<!-- Bootstrap 4 CSS -->
+
+	<title>Qualis CAPES ID</title>
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<!-- incluindo css -->
 	<link href="css/style.css" rel="stylesheet">
+
+	<!-- favicon -->
 	<link rel="shortcut icon" href="img/favicon.ico" />
+	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 		<!-- Brand/logo -->
 		<a class="navbar-brand" href="#"><img class="img-fluid" src="img/logocapeswebqualis.png" /></a>
@@ -23,7 +29,7 @@
 				<a class="nav-link" href="/">Home</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="/formulario_inclusao_issn">Formulário</a>
+				<a class="nav-link" href="#">Link 2</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">Link 3</a>
@@ -31,19 +37,14 @@
 		</ul>
 	</nav>
 
-
-
-
-
 	<div class="container-fluid">
-
-
-
+		
 		<div class="row">
 
 			<div class="col-md-12">
 				<!-- issn 0-->
-				<h3>Teste com ID</h3>
+				<h3>Informações Qualis do Título: <%= id_qualis[0].titulo %></h3>
+				<br/>
 				<div class="container-fluid">
 					<table class="table">
 						<thead>
@@ -56,11 +57,10 @@
 						</thead>
 						<tbody>
 							<tr>
-								<th scope="row"><%= qualis[0].issn %></th>
-								<td><a href="id_qualis?id_qualis=<%= qualis[0].id_qualis %>"
-										class="noticia_titulo"><%= qualis[0].titulo %></a></td>
-								<td><%= qualis[0].area_avaliacao %></td>
-								<td><%= qualis[0].estrato %></td>
+								<th scope="row"><%= id_qualis[0].issn %></th>
+								<td><%= id_qualis[0].titulo %></td>
+								<td><%= id_qualis[0].area_avaliacao %></td>
+								<td><%= id_qualis[0].estrato %></td>
 							</tr>
 							
 						
@@ -69,62 +69,6 @@
 				</div>
 			</div>
 		</div>
-
-
-		<div class="row">
-
-			<div class="col-md-12">
-				<!-- issn 0-->
-				<h3>Teste com ISSN</h3>
-				<div class="container-fluid">
-					<table class="table">
-						<thead>
-							<tr>
-								<th scope="col">ISSN</th>
-								<th scope="col">Título</th>
-								<th scope="col">Área de Avaliação</th>
-								<th scope="col">Estrato</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th scope="row"><%= qualis[0].issn %></th>
-								<td><a href="issn?issn=<%= qualis[0].issn %>"
-										class="noticia_titulo"><%= qualis[0].titulo %></a></td>
-								<td><%= qualis[0].area_avaliacao %></td>
-								<td><%= qualis[0].estrato %></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-
-
-		<h3>Outros</h3>
-		<div class="row">
-			<% for(var i = 2; i < qualis.length; i++) { %>
-			<div class="col-md-4">
-				<!-- noticia 2 -->
-				<div class="noticia_wrapper">
-					<span class="issn"><%= qualis[i].issn %></span>
-					<a href="id_qualis?id_qualis=<%= qualis[i].id_qualis %>"
-						class="issn_titulo"><%= qualis[i].titulo %></a>
-					<span class="noticia_data"><%= qualis[i].area_avaliacao %></span>
-					<br />
-					<p class="noticia_resumo">
-						<%= qualis[i].estrato %>
-					</p>
-				</div>
-			</div>
-
-			<% } %>
-		</div>
-
-		<div class="row ver_mais">
-			<button type="button" class="btn btn-default"><a href="qualis">Ver todas as Qualis</a></button>
-		</div>
-
 	</div>
 
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
